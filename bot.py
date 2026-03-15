@@ -22,8 +22,7 @@ async def on_ready():
     now = datetime.now(ZoneInfo("Asia/Tokyo"))
     target = datetime(TARGET_YEAR, TARGET_MONTH, TARGET_DAY, tzinfo=ZoneInfo("Asia/Tokyo"))
 
-    diff = target - now
-    days = diff.days
+    days = (target.date() - now.date()).days
 
     if days > 0:
         message = f"横浜旅行日まで **あと {days} 日だよ！"
