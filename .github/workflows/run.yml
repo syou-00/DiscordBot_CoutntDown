@@ -1,0 +1,28 @@
+name: countdown-bot
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # 毎日実行 (UTC)
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリ取得
+        uses: actions/checkout@v4
+
+      - name: Pythonセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 依存関係インストール
+        run: pip install -r requirements.txt
+
+      - name: Bot実行
+        run: python bot.py
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
