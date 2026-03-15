@@ -1,6 +1,8 @@
 import discord
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import os
+
 
 TOKEN = os.environ["DISCORD_TOKEN"]
 CHANNEL_ID = int(os.environ["CHANNEL_ID"])
