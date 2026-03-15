@@ -20,7 +20,7 @@ async def on_ready():
     channel = client.get_channel(CHANNEL_ID)
 
     now = datetime.now(ZoneInfo("Asia/Tokyo"))
-    target = datetime(TARGET_YEAR, TARGET_MONTH, TARGET_DAY)
+    target = datetime(TARGET_YEAR, TARGET_MONTH, TARGET_DAY, tzinfo=ZoneInfo("Asia/Tokyo"))
 
     diff = target - now
     days = diff.days
