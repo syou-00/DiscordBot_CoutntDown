@@ -17,7 +17,7 @@ client = discord.Client(intents=intents)
 async def on_ready():
     channel = client.get_channel(CHANNEL_ID)
 
-    now = datetime.utcnow()
+    now = datetime.now(ZoneInfo("Asia/Tokyo"))
     target = datetime(TARGET_YEAR, TARGET_MONTH, TARGET_DAY)
 
     diff = target - now
