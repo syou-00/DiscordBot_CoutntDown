@@ -9,8 +9,8 @@ CHANNEL_ID = int(os.environ["CHANNEL_ID"])
 
 # カウントダウンする日付（日本時間）
 TARGET_YEAR = 2026
-TARGET_MONTH = 3
-TARGET_DAY = 16
+TARGET_MONTH = 5
+TARGET_DAY = 7
 
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
@@ -25,9 +25,9 @@ async def on_ready():
     days = (target.date() - now.date()).days
 
     if days > 0:
-        message = f"横浜旅行日まで **あと {days} 日だよ！"
+        message = f"横浜旅行日まで あと {days} 日だよ！"
     elif days == 0:
-        message = "🎉当日だよ！！"
+        message = "🎉当日だよ！！ 楽しもう！！！！"
 
     await channel.send(message)
     await client.close()
