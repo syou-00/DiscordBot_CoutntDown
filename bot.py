@@ -7,8 +7,8 @@ CHANNEL_ID = int(os.environ["CHANNEL_ID"])
 
 # カウントダウンする日付（日本時間）
 TARGET_YEAR = 2026
-TARGET_MONTH = 5
-TARGET_DAY = 7
+TARGET_MONTH = 3
+TARGET_DAY = 16
 
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
